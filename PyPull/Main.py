@@ -19,8 +19,32 @@ with open('election_data.csv','r') as csv_file :
         county.append(row[1])
         candidates.append(row[2])
         
-        # number of votes
+        # Total # of votes 
         total_votes = (len(votes))
         print(total_votes)
         
+        # Votes per person 
+        for candidate in candidates: 
+            if candidate == "Khan":
+                khan.append(candidates)
+                total_khan_votes = len(khan)
+            elif candidate == "Correy":
+                correy.append(candidates)
+                correy_votes = len(correy)
+            elif candidate == "Li":
+                li.append(candidates)
+                total_li_votes = len(li)
+            else:
+                otooley.append(candidates)
+                total_otooley_votes = len(otooley)
+                
+                print(correy_votes)
+                print(total_khan_votes)
+                print(total_li_votes)
+                print(total_otooley_votes)
+                
+                
+                
+                
         
+      
