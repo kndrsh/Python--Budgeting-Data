@@ -13,9 +13,14 @@ with open('election_data.csv','r') as csv_file :
     correy = []
     li = []
     otooley = []
+    total_khan_votes = 0 
+    total_correy_votes = 0
+    total_li_votes = 0
+    total_otooley_votes = 0
     
     for row in csv_reader:
-        votes.append(row[0])
+        votes.append((row[0]))
+        print(votes)
         county.append(row[1])
         candidates.append(row[2])
         
@@ -23,26 +28,38 @@ with open('election_data.csv','r') as csv_file :
         total_votes = (len(votes))
         print(total_votes)
         
+  
+        
         # Votes per person 
         for candidate in candidates: 
-            if candidate == "Khan":
+            if candidate == "khan":
                 khan.append(candidates)
                 total_khan_votes = len(khan)
-            elif candidate == "Correy":
+                
+            elif candidate == "correy":
                 correy.append(candidates)
-                correy_votes = len(correy)
-            elif candidate == "Li":
+                total_correy_votes = len(correy)
+                
+            elif candidate == "li":
                 li.append(candidates)
                 total_li_votes = len(li)
+                
             else:
                 otooley.append(candidates)
                 total_otooley_votes = len(otooley)
                 
-                print(correy_votes)
-                print(total_khan_votes)
-                print(total_li_votes)
-                print(total_otooley_votes)
+         
+                      #Percentage of Votes 
+        khan_percent = round(((total_khan_votes / total_votes) * 100), 2)
+        correy_percent = round(((total_correy_votes / total_votes) * 100), 2)
+        li_percent = round(((total_li_votes / total_votes) * 100), 2)
+        otooley_percent = round(((total_otooley_votes / total_votes) * 100), 2)
+    print(khan_percent)
+    print(correy_percent)
+    print(li_percent)
+    print(otooley_percent)
                 
+    #Winner 
                 
                 
                 
