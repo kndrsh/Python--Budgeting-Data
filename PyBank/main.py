@@ -23,8 +23,7 @@ with open('budget_data.csv','r') as csv_file :
         total_profit.append(row[1])
         print(len(total_months))
         
-        # Average Profit Change 
-        profit_average = sum(int(total_profit))/len(monthly_profit_change)
+       
         
         
         # monthly change in profits ( c will represent change)
@@ -40,18 +39,22 @@ with open('budget_data.csv','r') as csv_file :
             max_greatest_decrease = min(monthly_profit_change)
             
             
-            max_greatest_increase_month = monthly_profit_change.index(max(monthly_profit_change)) + 1
-            max_greatest_decrease_month = monthly_profit_change.index(min(monthly_profit_change)) + 1
+            max_greatest_increase_month = monthly_profit_change.index(max(monthly_profit_change)) +1
+            max_greatest_decrease_month = monthly_profit_change.index(min(monthly_profit_change)) +1
             
             # Print Statements 
             print("Financial Analysis")
             print("---------------------------------")
             print(f"Total months: {len(total_months)}")
-            print(f"Average Profit: {profit_average}")
+            print(f"Average Change: {round(sum(monthly_profit_change)/len(monthly_profit_change),2)}")
             print(f"Greatest Increase In Profits: {total_months[max_greatest_increase_month]} (${(str(max_greatest_increase))})") 
+            print(f"Greatest Decrease In Profits: {total_months[max_greatest_decrease_month]} (${(str(max_greatest_decrease))})") 
             
             
-       
+       # Export the results to text file
+budget_data_export = "analysis/budget_data.txt"
+with open(budget_data_export, "w") as txt_file:
+    txt_file.write()
             
        
         
