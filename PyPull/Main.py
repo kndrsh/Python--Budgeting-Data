@@ -26,7 +26,7 @@ with open('election_data.csv','r') as csv_file :
         
         # Total # of votes 
         total_votes = (len(votes))
-        print(total_votes)
+    
         
   
         
@@ -60,6 +60,15 @@ with open('election_data.csv','r') as csv_file :
     print(otooley_percent)
                 
     #Winner 
+    if khan_percent > max(correy_percent, li_percent, otooley_percent):
+        winner = "Khan"
+    elif correy_percent > max(khan_percent, li_percent, otooley_percent):
+        winner = "Correy"  
+    elif li_percent > max(correy_percent, khan_percent, otooley_percent):
+        winner = "Li"
+    else:
+        winner = "Otooley"
+
                 
                 
                 
