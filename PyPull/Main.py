@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr  7 18:19:58 2021
+# import modules to load csv data
+import os
+import csv
 
-@author: kndrs
-"""
-
+with open('election_data.csv','r') as csv_file :
+    csv_reader = csv.reader(csv_file,delimiter =",")
