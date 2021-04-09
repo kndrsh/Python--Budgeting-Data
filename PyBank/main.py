@@ -12,6 +12,13 @@ import csv
 total_months = []
 total_profit = []
 monthly_profit_change = []
+profit_variable = 0
+temp = []
+profit_change = 0
+
+ 
+
+
 
 with open('budget_data.csv','r') as csv_file :
     csv_reader = csv.reader(csv_file,delimiter =",")
@@ -24,38 +31,48 @@ with open('budget_data.csv','r') as csv_file :
         print(len(total_months))
         
        
-        
+ 
+                  
         
         # monthly change in profits ( c will represent change)
         # have to use for loop to iterate through the profits to get monthly change
         
         for c in range(len(total_profit)-1):
-            monthly_profit_change.append(int(total_profit[c+1])- int(total_profit[c]))
+            profit_change = int(total_profit[c+1])- int(total_profit[c])
+            monthly_profit_change.append(profit_change)
+            
+          
             
             #Finding Greatest Increase & Greatest Decrease (Profits)
             # Can use the max & min function 
             
-            max_greatest_increase = max(monthly_profit_change)
-            max_greatest_decrease = min(monthly_profit_change)
+max_greatest_increase = max(monthly_profit_change) 
+max_greatest_decrease = min(monthly_profit_change)
             
             
-            max_greatest_increase_month = monthly_profit_change.index(max(monthly_profit_change)) +1
-            max_greatest_decrease_month = monthly_profit_change.index(min(monthly_profit_change)) +1
-            
+           
+max_greatest_increase_month = monthly_profit_change.index(max_greatest_increase)
+max_greatest_decrease_month = monthly_profit_change.index(max_greatest_decrease)
+
+
+
+ #Average 
+temp = [int(i) for i in total_profit] 
+profit_variable = sum(temp) /len(temp)            
+    
             # Print Statements 
-            print("Financial Analysis")
-            print("---------------------------------")
-            print(f"Total months: {len(total_months)}")
-            print(f"Average Change: {round(sum(monthly_profit_change)/len(monthly_profit_change),2)}")
-            print(f"Greatest Increase In Profits: {total_months[max_greatest_increase_month]} (${(str(max_greatest_increase))})") 
-            print(f"Greatest Decrease In Profits: {total_months[max_greatest_decrease_month]} (${(str(max_greatest_decrease))})") 
+print(len(monthly_profit_change))
+print("Financial Analysis")
+print("---------------------------------")
+print(f"Total months: {len(total_months)}")
+print(f"Average Change: {profit_variable}")
+print(max_greatest_increase_month)
+print(len(total_months))
+print(f"Greatest Increase In Profits: {total_months[max_greatest_increase_month]} (${(str(max_greatest_increase))})") 
+print(f"Greatest Decrease In Profits: {total_months[max_greatest_decrease_month]} (${(str(max_greatest_decrease))})") 
             
             
-       # Export the results to text file
-budget_data_export = "analysis/budget_data.txt"
-with open(budget_data_export, "w") as txt_file:
-    txt_file.write()
-            
+
        
         
     
