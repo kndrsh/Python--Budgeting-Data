@@ -73,8 +73,13 @@ print(f"Greatest Increase In Profits: {total_months[max_greatest_increase_month]
 print(f"Greatest Decrease In Profits: {total_months[max_greatest_decrease_month]} (${(str(max_greatest_decrease))})") 
             
             
-
-       
+# Py file to text 
+print(("Financial Analysis"),file=open("output.txt","a"))
+print("---------------------------------",file=open("output.txt","a"))
+print(f"Total months: {len(total_months)}",file=open("output.txt","a"))
+print(f"Average Change: {profit_variable}",file=open("output.txt","a"))
+print(f"Greatest Increase In Profits: {total_months[max_greatest_increase_month]} (${(str(max_greatest_increase))})",file=open("output.txt","a")) 
+print(f"Greatest Decrease In Profits: {total_months[max_greatest_decrease_month]} (${(str(max_greatest_decrease))})",file=open("output.txt","a"))        
         
     
     

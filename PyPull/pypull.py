@@ -30,23 +30,23 @@ with open('election_data.csv','r') as csv_file :
         
     
         # Votes per person 
-    for candidate in candidates: 
+        for candidate in candidates: 
            
-          if candidate == "Khan":
+            if candidate == "khan":
                 #khan.append(candidates)
-              total_khan_votes += 1
+                total_khan_votes += 1
                 
-          elif candidate == "Correy":
+            elif candidate == "correy":
                # correy.append(candidates)
-              total_correy_votes+= 1
+               total_correy_votes+= 1
                 
-          elif candidate == "Li":
+            elif candidate == "li":
                # li.append(candidates)
-              total_li_votes += 1
+                total_li_votes += 1
                 
-          else:
+            else:
                # otooley.append(candidates)
-              total_otooley_votes += 1
+                total_otooley_votes += 1
                
 
                       #Percentage of Votes 
@@ -66,20 +66,17 @@ else:
     winner = "O'tooley"
 
                 
-print("Election Results") 
+print("Election Results}") 
 print("-----------------------------------")     
-print (f"Total Votes : {total_votes}") 
-print("-----------------------------------")
-print (f"Khan: {khan_percent} ({total_khan_votes}) ")
-print(f"Coorey : {correy_percent} ({total_correy_votes}) ")
+print (f"Total Votes : {total_votes}")
+print("winner : " + winner)  
+print (f" Khan: {khan_percent} ({total_khan_votes}) ")
+print(f"coorey : {correy_percent} ({total_correy_votes}) ")
 print(f"Li : {li_percent} ({total_li_votes}) ")
 print(f"O'tooley' : {otooley_percent} ({total_otooley_votes}) ")
-print("-----------------------------------")
-print("Winner : " + winner) 
-print("-----------------------------------")
 
 
-print("{Election Results}", file=open("output.txt","a")) 
+print("Election Results}", file=open("output.txt","a")) 
 print("-----------------------------------", file=open("output.txt","a"))     
 print (f"Total Votes : {total_votes}", file=open("output.txt","a"))
 print("winner : " + winner, file=open("output.txt","a"))  

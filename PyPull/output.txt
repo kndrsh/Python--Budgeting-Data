@@ -1,0 +1,8 @@
+Election Results}
+-----------------------------------
+Total Votes : 3521002
+winner : Khan
+ Khan: 63.0 (2218231) 
+coorey : 20.0 (704200) 
+Li : 14.0 (492940) 
+O'tooley' : 3.0 (105631) 
