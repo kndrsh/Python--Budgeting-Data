@@ -28,7 +28,6 @@ with open('budget_data.csv','r') as csv_file :
     for row in csv_reader :
         total_months.append(row[0])
         total_profit.append(row[1])
-        print(len(total_months))
         
        
  
@@ -37,9 +36,10 @@ with open('budget_data.csv','r') as csv_file :
         # monthly change in profits ( c will represent change)
         # have to use for loop to iterate through the profits to get monthly change
         
-        for c in range(len(total_profit)-1):
-            profit_change = int(total_profit[c+1])- int(total_profit[c])
-            monthly_profit_change.append(profit_change)
+    for c in range(len(total_profit)-1):
+        profit_change = int(total_profit[c+1])- int(total_profit[c])
+        monthly_profit_change.append(profit_change)
+        
             
           
             
@@ -60,14 +60,15 @@ max_greatest_decrease_month = monthly_profit_change.index(max_greatest_decrease)
 temp = [int(i) for i in total_profit] 
 profit_variable = sum(temp) /len(temp)            
     
-            # Print Statements 
-print(len(monthly_profit_change))
+ 
+           # Print Statements 
+           
+        
+
 print("Financial Analysis")
 print("---------------------------------")
 print(f"Total months: {len(total_months)}")
 print(f"Average Change: {profit_variable}")
-print(max_greatest_increase_month)
-print(len(total_months))
 print(f"Greatest Increase In Profits: {total_months[max_greatest_increase_month]} (${(str(max_greatest_increase))})") 
 print(f"Greatest Decrease In Profits: {total_months[max_greatest_decrease_month]} (${(str(max_greatest_decrease))})") 
             
