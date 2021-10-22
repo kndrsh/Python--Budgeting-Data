@@ -3,7 +3,7 @@
  In this project I created a Python script for analyzing the financial records of a company. I examined a csv file called budget_data.csv with a python script to answer some questions I had.  
 
 
-create a Python script that analyzes the records to calculate each of the following:
+The Python script  analyzes the records to calculate each of the following:
 
   * The total number of months included in the dataset
 
@@ -26,7 +26,5 @@ The total number of votes cast
   * The total number of votes each candidate won
 
   * The winner of the election based on popular vote.
-
-* As an example, your analysis should look similar to the one below:
 
 <img width="257" alt="Pybank_img2" src="https://user-images.githubusercontent.com/46588030/137403657-767c42cf-dbed-45fe-8e9f-608fb14a1631.png">
